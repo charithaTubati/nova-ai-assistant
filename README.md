@@ -1,9 +1,9 @@
-# -LLM-based-Chat-Assistant-Lisa-
+# -LLM-based-Chat-Assistant-Nova-
 
 
-# Lisa - Your Personal Voice Assistant (Python)
+# Nova - Your Personal Voice Assistant (Python)
 
-**Lisa** is a smart desktop voice assistant built using Python. It helps users interact with their system and the internet using natural voice commands. Powered by speech recognition, text-to-speech, and Gemini API integration, Lisa performs various tasks like opening websites, adjusting brightness/volume, drafting emails, playing YouTube videos, and responding to AI prompts.
+**Nova** is a smart desktop voice assistant built using Python. It helps users interact with their system and the internet using natural voice commands. Powered by speech recognition, text-to-speech, and Gemini API integration, Nova performs various tasks like opening websites, adjusting brightness/volume, drafting emails, playing YouTube videos, and responding to AI prompts.
 
 ---
 
