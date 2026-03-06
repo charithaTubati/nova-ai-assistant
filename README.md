@@ -1,8 +1,6 @@
-# -LLM-based-Chat-Assistant-Nova-
+# Nova – AI Voice Assistant
 
-
-# Nova - Your Personal Voice Assistant (Python)
-
+Nova – Your Personal AI Voice Assistant (Python)
 **Nova** is a smart desktop voice assistant built using Python. It helps users interact with their system and the internet using natural voice commands. Powered by speech recognition, text-to-speech, and Gemini API integration, Nova performs various tasks like opening websites, adjusting brightness/volume, drafting emails, playing YouTube videos, and responding to AI prompts.
 
 ---
@@ -13,8 +11,7 @@
   Control the assistant using voice with Google Speech Recognition.
 
 - 💬 **Text-to-Speech Responses**  
-  Uses SAPI.SpVoice (Windows only) to respond audibly.
-
+  Uses pyttsx3 to generate voice responses.
 - 🌞 **Control Brightness**  
   Increase/decrease screen brightness by 10%.
 
@@ -31,8 +28,7 @@
   Search and play YouTube videos using `pytube`.
 
 - 🤖 **Ask AI (Gemini API)**  
-  Send prompts to Google's Gemini API and get responses saved to local files.
-
+Send prompts to Google Gemini API and generate AI responses which are saved locally.
 ---
 
 ## 📦 Requirements
@@ -40,4 +36,4 @@
 Install dependencies via `pip`:
 
 ```bash
-pip install SpeechRecognition pywin32 screen_brightness_control pycaw requests pytube3
+pip install SpeechRecognition pyttsx3 screen_brightness_control pytube requests
