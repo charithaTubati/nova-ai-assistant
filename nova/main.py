@@ -3,14 +3,13 @@ import os
 os.environ["PATH"] += ":/opt/homebrew/bin"
 import webbrowser
 import time
-import os
 import datetime
 import urllib.parse
 import requests
 import uuid
 import re
 import screen_brightness_control as sbc
-apikey = "Add you API KEY"
+apikey = os.getenv("GEMINI_API_KEY")
 ASSISTANT_NAME = "Nova"
 
 # Setup voice
@@ -271,14 +270,14 @@ def open_website(query):
     }
 
     for key, url in websites.items():
-        if query == key:
+        if key in query:
             webbrowser.open(url)
             speak(f"Opening {key.replace('open ', '')}.")
             return True
 
     try:
         for app_name, app_path in applications.items():
-            if query == app_name:
+            if app_name in query:
                 os.startfile(app_path)
                 speak(f"Opening {app_name.replace('open ', '')}")
                 return True
