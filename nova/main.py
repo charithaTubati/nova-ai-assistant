@@ -291,7 +291,7 @@ def main():
     greet_user()
     while True:
         with sr.Microphone() as source:
-            print("Waiting for command...")
+            print("Nova is listening...")
             r.adjust_for_ambient_noise(source, duration=0.5)
             try:
                 audio = r.listen(source, timeout=5, phrase_time_limit=5)
