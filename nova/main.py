@@ -295,7 +295,13 @@ def main():
             r.adjust_for_ambient_noise(source, duration=0.5)
             try:
                 audio = r.listen(source, timeout=5, phrase_time_limit=5)
+                WAKE_WORD = "nova"
+
                 query = r.recognize_google(audio, language="en-in").lower()
+
+                if WAKE_WORD in query:
+                    speak("Yes, how can I help?")
+                    continue
                 print(f"User said: {query}")
 
                 if query == "exit":
