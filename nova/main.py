@@ -327,9 +327,12 @@ def main():
                     continue
                 if "using artificial intelligence" in query:
                     ai(prompt=query)
+                if query == "open youtube":
+                    handle_youtube()
+                    continue
                 if not open_website(query):
-                    speak(query)
-
+                    ai(query)
+                
             except sr.WaitTimeoutError:
                 continue
             except sr.UnknownValueError:
