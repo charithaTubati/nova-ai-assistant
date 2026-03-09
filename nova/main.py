@@ -300,8 +300,9 @@ def main():
                 query = r.recognize_google(audio, language="en-in").lower()
 
                 if WAKE_WORD in query:
-                    speak("Yes, how can I help?")
-                    continue
+                    query = query.replace(WAKE_WORD, "").strip()
+
+                
                 print(f"User said: {query}")
 
                 if query == "exit":
