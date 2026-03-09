@@ -326,8 +326,7 @@ def main():
                 if query == "open youtube":
                     handle_youtube()
                     continue
-                if "using artificial intelligence" in query:
-                    ai(prompt=query)
+                
                 
                 if not open_website(query):
                     ai(query)
