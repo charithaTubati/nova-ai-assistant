@@ -322,8 +322,7 @@ def main():
                     speak(f"The time is {now.strftime('%H')} hours and {now.strftime('%M')} minutes")
                     continue
 
-                
-                if query == "open youtube":
+                if "youtube" in query:
                     handle_youtube()
                     continue
                 
