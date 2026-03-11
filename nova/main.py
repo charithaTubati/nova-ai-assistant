@@ -93,6 +93,26 @@ def ai(prompt):
         print(f"Error fetching Gemini response: {e}")
         speak("There was a problem fetching the AI response.")
 
+def get_weather(city):
+    WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+    api_key = WEATHER_API_KEY
+
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        temperature = data["main"]["temp"]
+        description = data["weather"][0]["description"]
+
+        result = f"The temperature in {city} is {temperature} degrees Celsius with {description}."
+        print(result)
+        speak(result)
+
+    except:
+        speak("Sorry, I couldn't get the weather information.")
+
 
 def greet_user():
     current_hour = time.localtime().tm_hour
@@ -326,7 +346,10 @@ def main():
                     handle_youtube()
                     continue
                 
-                
+                if "weather in" in query:
+                    city = query.split("weather in")[-1].strip()
+                    get_weather(city)
+                    continue
                 if not open_website(query):
                     ai(query)
                 
